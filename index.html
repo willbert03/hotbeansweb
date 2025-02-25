@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+ <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300...800&display=swap" rel="stylesheet">
  <style>
 body {
 	margin: 0px 0px 20px 0px;
-	background-color: #fff;
-	font-family: Arial;
+	background-color: #F05A3F;
+	font-family: Parkinsans, sans-serif;
 	font-size: 12pt;
 	}
 h1 {
@@ -29,13 +30,13 @@ color: #222;
 	bottom: 0;
 	width: 100%;
 	border-radius: 25px 25px 0px 0px;
-  background: rgba(34, 34, 34, 0.69);
+  background: rgba(34, 34, 34, 0.8);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(34, 34, 34, 0.16);
-  z-index: 1;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -50,7 +51,7 @@ color: #222;
 }
 
 .navbar a:hover {
-  background: #F05A3F;
+backdrop-filter: brightness(7);
   color: black;
   font-weight: bold;
 }
@@ -61,7 +62,11 @@ float: left;
   height: 50px;
   display: block;
 	position: fixed;
-	bottom: 50px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
 }
 
 .content {
@@ -71,12 +76,57 @@ border-style: solid;
   border-color: red;
 }
 
-.logocenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  position: center;
+/* Full-screen container to center everything */
+.circle-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    overflow: hidden; /* Clip circles that go off-screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Common circle styles */
+.circle {
+    position: absolute;
+    background-color: rgba(245, 245, 220, 0.5); /* Beige with 50% transparency */
+    border-radius: 75%;
+}
+
+.large {
+    width: 75vw;
+    height: 75vw;
+    z-index: 1;
+}
+
+.medium {
+    width: 55vw;
+    height: 55vw;
+    z-index: 2;
+}
+
+.small {
+    width: 35vw;
+    height: 35vw;
+    z-index: 3;
+}
+
+.logo {
+    position: absolute;
+    width: 50vw;
+    height: auto;
+    z-index: 4;
+}
+.circle-container > .p {
+  position: absolute;
+  bottom: 10%;
+  align: center;
+  color: #111;
+  z-index: 5;
 }
  </style>
  
@@ -92,9 +142,12 @@ border-style: solid;
 </div>
 <div class="content">
   <div class="logocenter">
-    <img src="/img/logo.svg" alt="Hot Beans Web">
-  <h1>Hot Beans Web!!</h1>
-  <p>Some text some text some text.</p>
-</div>
+    <div class="circle-container">
+      <div class="circle large"></div>
+      <div class="circle medium"></div>
+      <div class="circle small"></div>
+      <img src="/img/logo.svg" alt="Brand Logo" class="logo">
+      <p class="p">Welcome to Hot Beans Web</p>
+  </div>
 </body>
 </html>
