@@ -10,16 +10,18 @@ body {
 	}
 h1 {
 text-align: center;
-color: #000;
+color: #111;
 font-weight: bold;
 }
 
 p {
-color: #111;
+color: #222;
 }
-	
+
 .navbar {
-	background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 	color: #eee;
 	text-align: center;
 	overflow: hidden;
@@ -27,11 +29,17 @@ color: #111;
 	bottom: 0;
 	width: 100%;
 	border-radius: 25px 25px 0px 0px;
-	border-style: solid;
-  border-color: green;
+  background: rgba(34, 34, 34, 0.69);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 34, 34, 0.16);
+  z-index: 1;
 }
 
 .navbar a {
+  width: 100%;
   float: right;
   display: block;
   color: #eee;
@@ -47,22 +55,28 @@ color: #111;
   font-weight: bold;
 }
 
-.navbar a.active {
-  background-color: #444;
-  color: white;
-}
-
-.navbar img {
+.logo {
 float: left;
   width: 50px;
   height: 50px;
   display: block;
+	position: fixed;
+	bottom: 50px;
 }
-.main {
+
+.content {
   padding: 16px;
   margin-bottom: 30px;
 border-style: solid;
   border-color: red;
+}
+
+.logocenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: center;
 }
  </style>
  
@@ -70,15 +84,15 @@ border-style: solid;
 </head>
 <body>
 <div class="navbar">
-  <img src="/img/logo.svg" alt="Hot Beans Web">
   <a href="index.html" class="active">Home</a>
   <a href="about.html">About Us</a>
   <a href="comissioned-work.html">Comissioned Work</a>
   <a href="employees.html">Employees</a>
   <a href="vacancies.html">Vacancies</a>
 </div>
-
-<div class="main">
+<div class="content">
+  <div class="logocenter">
+    <img src="/img/logo.svg" alt="Hot Beans Web">
   <h1>Hot Beans Web!!</h1>
   <p>Some text some text some text.</p>
 </div>
