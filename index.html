@@ -1,99 +1,32 @@
 <!DOCTYPE html>
 <head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300...800&display=swap" rel="stylesheet">
  <style>
-body {
-	margin: 0px 0px 20px 0px;
-	background-color: #F05A3F;
-	font-family: Parkinsans, sans-serif;
-	font-size: 12pt;
-	}
-h1 {
-text-align: center;
-color: #111;
-font-weight: bold;
-}
-
-p {
-color: #222;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	color: #eee;
-	text-align: center;
-	overflow: hidden;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	border-radius: 25px 25px 0px 0px;
-  background: rgba(34, 34, 34, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(34, 34, 34, 0.16);
-  z-index: 1000;
-}
-
-.navbar a {
-  width: 100%;
-  float: right;
-  display: block;
-  color: #eee;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
-backdrop-filter: brightness(7);
-  color: black;
-  font-weight: bold;
-}
-
+/* Floating logo sub pages */
 .logo {
-float: left;
-  width: 50px;
-  height: 50px;
-  display: block;
-	position: fixed;
+display: none;
 }
 
-.logo:hover {
-  transform: scale(1.1);
-  transition: transform 0.1s ease-in-out;
-}
-
-.content {
-  padding: 16px;
-  margin-bottom: 30px;
-border-style: solid;
-  border-color: red;
-}
-
-/* Full-screen container to center everything */
+/* Large circles and logo centered */
 .circle-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw; /* Full screen width */
-    height: 100vh; /* Full screen height */
-    overflow: hidden; /* Clip circles that go off-screen */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Common circle styles */
 .circle {
-    position: absolute;
-    background-color: rgba(245, 245, 220, 0.5); /* Beige with 50% transparency */
+    position: fixed;
+    background-color: #f5f5dc80;
     border-radius: 75%;
 }
 
@@ -115,14 +48,19 @@ border-style: solid;
     z-index: 3;
 }
 
-.logo {
-    position: absolute;
+.logohome {
+    position: fixed;
+    align: center;
     width: 50vw;
     height: auto;
+    transition: 0.1s ease-in-out;
     z-index: 4;
 }
+.logohome:hover {
+  transform: scale(1.1);
+}
 .circle-container > .p {
-  position: absolute;
+  position: fixed;
   bottom: 10%;
   align: center;
   color: #111;
@@ -136,7 +74,7 @@ border-style: solid;
 <div class="navbar">
   <a href="index.html" class="active">Home</a>
   <a href="about.html">About Us</a>
-  <a href="comissioned-work.html">Comissioned Work</a>
+  <a href="commissioned-work.html">Commissioned Work</a>
   <a href="employees.html">Employees</a>
   <a href="vacancies.html">Vacancies</a>
 </div>
@@ -146,8 +84,12 @@ border-style: solid;
       <div class="circle large"></div>
       <div class="circle medium"></div>
       <div class="circle small"></div>
-      <img src="/img/logo.svg" alt="Brand Logo" class="logo">
+      <img src="/img/logo.svg" alt="Brand Logo" class="logohome">
       <p class="p">Welcome to Hot Beans Web</p>
+    </div>
   </div>
+  <div class="logo">
+    <img src="/img/logo.svg" alt="HBW Corner Logo">
+</div>
 </body>
 </html>
