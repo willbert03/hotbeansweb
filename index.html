@@ -1,95 +1,132 @@
 <!DOCTYPE html>
-<head>
- <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
- <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300...800&display=swap" rel="stylesheet">
- <style>
-/* Floating logo sub pages */
-.logo {
-display: none;
-}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      /* Floating logo sub pages */
+      .logo {
+        display: none;
+      }
 
-/* Large circles and logo centered */
-.circle-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+      /* Large circles and logo centered */
+      .circle-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.circle {
-    position: fixed;
-    background-color: #f5f5dc80;
-    border-radius: 75%;
-}
+      .circle {
+        position: fixed;
+        background-color: var(--accent-colour2);
+        border-radius: 75%;
+        transition: 0.25s ease-in-out;
+        opacity: 0;
+        transform: scale(0);
+        animation: popout 0.75s ease-out forwards;
+      }
 
-.large {
-    width: 75vw;
-    height: 75vw;
-    z-index: 1;
-}
+      .large {
+        width: 75vw;
+        height: 75vw;
+        z-index: 1;
+        transition-delay: 0.3s;
+        animation-delay: 0.3s;
+        animation-duration: 0.5s;
+      }
 
-.medium {
-    width: 55vw;
-    height: 55vw;
-    z-index: 2;
-}
+      .medium {
+        width: 55vw;
+        height: 55vw;
+        z-index: 2;
+        transition-delay: 0.45s;
+        animation-delay: 0.45s;
+        animation-duration: 0.5s;
+      }
 
-.small {
-    width: 35vw;
-    height: 35vw;
-    z-index: 3;
-}
+      .small {
+        width: 35vw;
+        height: 35vw;
+        z-index: 3;
+        transition-delay: 0.6s;
+        animation-delay: 0.6s;
+        animation-duration: 0.5s;
+      }
 
-.logohome {
-    position: fixed;
-    align: center;
-    width: 50vw;
-    height: auto;
-    transition: 0.1s ease-in-out;
-    z-index: 4;
-}
-.logohome:hover {
-  transform: scale(1.1);
-}
-.circle-container > .p {
-  position: fixed;
-  bottom: 10%;
-  align: center;
-  color: #111;
-  z-index: 5;
-}
- </style>
- 
- <title>Home | Hot Beans Web</title>
-</head>
-<body>
-<div class="navbar">
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="commissioned-work.html">Commissioned Work</a>
-  <a href="employees.html">Employees</a>
-  <a href="vacancies.html">Vacancies</a>
-</div>
-<div class="content">
-  <div class="logocenter">
-    <div class="circle-container">
-      <div class="circle large"></div>
-      <div class="circle medium"></div>
-      <div class="circle small"></div>
-      <img src="/img/logo.svg" alt="Brand Logo" class="logohome">
-      <p class="p">Welcome to Hot Beans Web</p>
+      .logohome {
+        position: fixed;
+        align: center;
+        width: 45vw;
+        height: auto;
+        opacity: 0;
+        animation: fadein 0.8s ease-out forwards;
+        animation-delay: 0.9s;
+        transition: 0.25s ease-in-out;
+        z-index: 4;
+      }
+
+      .logohome:hover {
+        transform: scale(1.1);
+      }
+
+      .circle-container > .p {
+        position: fixed;
+        bottom: 10%;
+        align: center;
+        color: #222;
+        z-index: 5;
+      }
+
+      /* Initial loading animation */
+      @keyframes popout {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes fadein {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+    <title>Home | Hot Beans Web</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html" class="active"><span>Home</span></a>
+      <a href="about.html"><span>About Us</span></a>
+      <a href="commissioned-work.html"><span>Commissioned Work</span></a>
+      <a href="employees.html"><span>Employees</span></a>
+      <a href="vacancies.html"><span>Vacancies</span></a>
     </div>
-  </div>
-  <div class="logo">
-    <img src="/img/logo.svg" alt="HBW Corner Logo">
-</div>
-</body>
+    <div class="content">
+      <div class="logocenter">
+        <div class="circle-container">
+          <div class="circle large"></div>
+          <div class="circle medium"></div>
+          <div class="circle small"></div>
+          <img src="/img/logo.svg" alt="Brand Logo" class="logohome" />
+          <p class="p">Welcome to Hot Beans Web</p>
+        </div>
+      </div>
+      <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>
+    </div>
+  </body>
 </html>
