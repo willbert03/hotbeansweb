@@ -3,8 +3,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/img/logo.svg" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
+      /* Subpage specific style */
       /* Floating logo sub pages */
       .logo {
         display: none;
@@ -67,10 +69,10 @@
         width: 45vw;
         height: auto;
         opacity: 0;
-        animation: fadein 0.8s ease-out forwards;
+        z-index: 4;
+        animation: logofade 0.8s ease-out forwards;
         animation-delay: 0.9s;
         transition: 0.25s ease-in-out;
-        z-index: 4;
       }
 
       .logohome:hover {
@@ -83,6 +85,10 @@
         align: center;
         color: #222;
         z-index: 5;
+        font-weight: 600;
+        opacity: 0;
+        animation: fadein 0.8s ease-out forwards;
+        animation-delay: 0.9s;
       }
 
       /* Initial loading animation */
@@ -94,6 +100,19 @@
         100% {
           transform: scale(1);
           opacity: 0.5;
+        }
+      }
+
+      @keyframes logofade {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        80% {
+          transform: scale(1);
+        }
+        100% {
+          opacity: 1;
         }
       }
 
@@ -116,17 +135,16 @@
       <a href="employees.html"><span>Employees</span></a>
       <a href="vacancies.html"><span>Vacancies</span></a>
     </div>
-    <div class="content">
-      <div class="logocenter">
-        <div class="circle-container">
-          <div class="circle large"></div>
-          <div class="circle medium"></div>
-          <div class="circle small"></div>
-          <img src="/img/logo.svg" alt="Brand Logo" class="logohome" />
-          <p class="p">Welcome to Hot Beans Web</p>
-        </div>
+
+    <div class="logocenter">
+      <div class="circle-container">
+        <div class="circle large"></div>
+        <div class="circle medium"></div>
+        <div class="circle small"></div>
+        <img src="/img/logo.svg" alt="Brand Logo" class="logohome" />
+        <p class="p">Welcome to Hot Beans Web</p>
       </div>
-      <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>
     </div>
+    <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>
   </body>
 </html>

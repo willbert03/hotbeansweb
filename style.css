@@ -2,15 +2,18 @@
 :root {
   --accent-color1: #f05a3f;
   --accent-colour2: #f5f5db;
-  --primary-bg-color: #111111;
-  --primary-bg-color-opaque1: #111111cc;
-  --primary-bg-color-opaque2: #11111140;
-  --secondary-bg-color: #222222;
-  --secondary-bg-color-opaque1: #222222cc;
-  --secondary-bg-color-opaque2: #22222240;
+  --primary-bg-color: #121212;
+  --primary-bg-color-opaque1: #121212cc;
+  --primary-bg-color-opaque2: #12121240;
+  --secondary-bg-color: #212121;
+  --secondary-bg-color-opaque1: #212121cc;
+  --secondary-bg-color-opaque2: #21212140;
+  --tertiary-bg-color: #444444;
+  --tertiary-bg-color-opaque1: #444444cc;
+  --tertiary-bg-color-opaque2: #44444440;
   --text-color: #eeeeee;
   --shadows: #00000040;
-  --highlights: #ffffff80;
+  --highlights: #fbf7f580;
 }
 
 /* Light Mode Variables */
@@ -18,9 +21,9 @@
   :root {
     --accent-color1: #f05a3f;
     --accent-colour2: #f5f5db;
-    --primary-bg-color: #ffffff;
-    --primary-bg-color-opaque1: #ffffffcc;
-    --primary-bg-color-opaque2: #ffffff40;
+    --primary-bg-color: #fbf7f5;
+    --primary-bg-color-opaque1: #fbf7f5cc;
+    --primary-bg-color-opaque2: #fbf7f540;
     --secondary-bg-color: #f0f0f0;
     --secondary-bg-color-opaque1: #f0f0f0cc;
     --secondary-bg-color-opaque2: #f0f0f040;
@@ -31,23 +34,46 @@
 }
 
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Local Font Fallbacks */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/ttf/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/ttf/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 body {
   margin: 0px 0px 15px 0px;
   background-color: var(--accent-color1);
   font-family: Montserrat, sans-serif;
+  font-optical-sizing: auto;
   font-size: 12pt;
 }
 h1 {
   text-align: center;
   color: var(--primary-bg-color);
-  font-weight: bold;
+  font-weight: 600;
+}
+
+h2 {
+  color: var(--secondary-bg-color);
+  font-weight: 600;
 }
 
 p {
-  color: (var(--secondary-bg-color));
+  color: var(--secondary-bg-color);
+  font-weight: 400;
 }
 
 /* Navigation Bar */
@@ -80,7 +106,6 @@ p {
   font-size: 17px;
   position: relative;
   overflow: hidden;
-  transition: font 0.25s ease-in 0.25s, font 0.25s ease-out 0s;
 }
 
 .navbar a::before {
@@ -92,7 +117,7 @@ p {
   height: 100%;
   color: var(--primary-bg-color);
   background: var(--highlights);
-  backdrop-filter: brightness(15) opacity(0.5);
+  backdrop-filter: brightness(10) opacity(0.5);
   transition: bottom 0.1s ease-in-out;
   pointer-events: none;
 }
@@ -118,7 +143,7 @@ p {
 
 .navbar a:hover span {
   color: var(--primary-bg-color);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /* Logo */
@@ -136,5 +161,5 @@ p {
   margin: 20px 20px 15px 20px;
   margin-bottom: 30px;
   border-style: solid;
-  border-color: #33ff00;
+  border-color: #33ff00; /* Dev outline */
 }
