@@ -80,8 +80,7 @@ p {
   font-size: 17px;
   position: relative;
   overflow: hidden;
-  transition: color 0.25s ease-in-out 0.25s, font 0.25s ease-in 0.25s,
-    font 0.25s ease-out 0s;
+  transition: font 0.25s ease-in 0.25s, font 0.25s ease-out 0s;
 }
 
 .navbar a::before {
@@ -115,7 +114,6 @@ p {
 .navbar a span {
   color: var(--text-color);
   position: relative;
-  transition: color ease-in 0.2s, color ease-out 0.2s;
 }
 
 .navbar a:hover span {
