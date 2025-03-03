@@ -168,6 +168,7 @@ p {
   padding: 16px;
   margin: 20px 20px 15px 20px;
   margin-bottom: 30px;
+  border-radius: 25px 25px 25px 25px;
   background-color: var(--primary-bg-color);
   border-style: solid;
   border-color: #33ff00; /* Dev outline */
