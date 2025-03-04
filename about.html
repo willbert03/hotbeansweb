@@ -10,15 +10,14 @@
 
       .grid {
         display: grid;
-        height: 80vh;
+        height: 85vh;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        gap: 8px;
       }
-      .item {
-        background-color: #444;
+      .box {
+        background-color: var(--primary-bg-color);
         color: #fff;
-        border-radius: 5px;
+        border-radius: 25px;
         padding: 20px;
         font-size: 150%;
       }
@@ -29,22 +28,23 @@
         display: none;
       }
 
-      .item-0 {
+      .box-0 {
         grid-column: 1 / span 4;
         grid-row: 1 / span 3;
+        padding: 0px;
       }
 
-      .item-1 {
+      .box-1 {
         grid-column: 1 / span 4;
         grid-row: 4 / span 2;
       }
 
-      .item-2 {
+      .box-2 {
         grid-column: 1 / span 2;
         grid-row: 6;
       }
 
-      .item-3 {
+      .box-3 {
         grid-column: 3 / span 2;
         grid-row: 6;
       }
@@ -61,22 +61,22 @@
           display: block;
         }
 
-        .item-0 {
+        .box-0 {
           grid-column: 1 / span 2;
           grid-row: 1 / span 4;
         }
 
-        .item-1 {
+        .box-1 {
           grid-column: 3 / span 2;
           grid-row: 1 / span 3;
         }
 
-        .item-2 {
+        .box-2 {
           grid-column: 3;
           grid-row: 4;
         }
 
-        .item-3 {
+        .box-3 {
           grid-column: 4;
           grid-row: 4;
         }
@@ -95,10 +95,10 @@
 
     <div class="content">
       <div class="grid">
-        <div class="item item-0">0</div>
-        <div class="item item-1">1</div>
-        <div class="item item-2">2</div>
-        <div class="item item-3">3</div>
+        <div class="box box-0">slideshow</div>
+        <div class="box box-1"><p>about text</p></div>
+        <div class="box box-2">employees btn</div>
+        <div class="box box-3">contact</div>
       </div>
     </div>
     <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>

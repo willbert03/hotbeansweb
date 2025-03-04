@@ -76,6 +76,11 @@ p {
   font-weight: 400;
 }
 
+p:link p:visited p:hover p:active {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
 /* Navigation Bar */
 .navbar {
   display: flex;
@@ -159,17 +164,15 @@ p {
 }
 
 .logo img {
+  display: none;
   width: 100%;
   height: auto;
 }
 
 /* Content */
 .content {
-  padding: 16px;
-  margin: 20px 20px 15px 20px;
-  margin-bottom: 30px;
+  margin: 20px 20px 20px 20px;
   border-radius: 25px 25px 25px 25px;
-  background-color: var(--primary-bg-color);
   border-style: solid;
   border-color: #33ff00; /* Dev outline */
 }
