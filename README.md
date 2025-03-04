@@ -22,6 +22,7 @@ You have recently joined a web development company, Hot Beans Web as a junior we
 - Glass Navigation Bar: [css.glass](https://css.glass)
 - Variable Font Transition: [codepen.io](https://codepen.io/madshensel/pen/ZOYwpy)
 - Slide Hover Button Effect: [codepen.io](https://codepen.io/RazorXio/pen/gMaoOW)
+- Slideshow Carousel: [cssscript.com](https://www.cssscript.com/infinite-carousel-autoplay/)
 
 ## Tools Used
 
