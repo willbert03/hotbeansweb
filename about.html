@@ -17,10 +17,31 @@
       }
       .box {
         background-color: var(--primary-bg-color);
-        color: #fff;
+        color: var(--text-color);
         border-radius: 25px;
         padding: 20px;
-        font-size: 150%;
+        transition: background-image 0.75s ease;
+      }
+
+      .box-2,
+      .box-3 {
+        vertical-align: text-bottom;
+      }
+      .box-2:hover,
+      .box-3:hover {
+        background-image: linear-gradient(
+          var(--primary-bg-color),
+          var(--accent-color2)
+        );
+      }
+
+      .box h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .box p {
+        text-align: justify;
+        text-justify: inter-word;
       }
       .mobile-only {
         display: block;
@@ -31,13 +52,13 @@
 
       .box-0 {
         grid-column: 1 / span 4;
-        grid-row: 1 / span 3;
+        grid-row: 4 / span 2;
         padding: 0px;
       }
 
       .box-1 {
         grid-column: 1 / span 4;
-        grid-row: 4 / span 2;
+        grid-row: 1 / span 3;
       }
 
       .box-2 {
@@ -200,9 +221,35 @@
             </div>
           </div>
         </div>
-        <div class="box box-1"><p>about text</p></div>
-        <div class="box box-2">employees btn</div>
-        <div class="box box-3">contact</div>
+        <div class="box box-1">
+          <h1>About Us</h1>
+          <p>
+            At Hot Beans Web, we’re brewing up fresh, innovative web solutions
+            that help businesses thrive online. Founded in 2016, our small but
+            passionate team has been serving up bespoke websites, e-commerce
+            platforms, and custom web applications for clients of all sizes —
+            from local start-ups to household names like Kara’s Cakes, New Look,
+            and Amazon. Every project is carefully crafted with a blend of
+            creativity and technical expertise, delivering websites that not
+            only look great but perform smoothly. We pride ourselves on
+            attention to detail, roasting every line of code to perfection and
+            never cutting corners. Whether you’re looking to refresh your brand
+            or need a full-scale digital platform, our team will spill the beans
+            on the best solutions to help your business grow. At Hot Beans Web,
+            we believe great websites — like great coffee — should always be
+            fresh, bold, and built to energise.
+          </p>
+        </div>
+        <div class="box box-2">
+          <p>Mail:</p>
+          <br />
+          <a href="mailto:mail@hbw.com">mail@hbw.com</a>
+        </div>
+        <div class="box box-3">
+          <p>Phone:</p>
+          <br />
+          <a href="tel:01473277240">01473 277240</a>
+        </div>
       </div>
     </div>
     <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>

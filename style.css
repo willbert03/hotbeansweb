@@ -1,7 +1,7 @@
 /* Dark Mode Variables */
 :root {
   --accent-color1: #f05a3f;
-  --accent-colour2: #f5f5db;
+  --accent-color2: #f5f5db;
   --primary-bg-color: #121212;
   --primary-bg-color-opaque1: #121212cc;
   --primary-bg-color-opaque2: #12121240;
@@ -20,7 +20,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color1: #f05a3f;
-    --accent-colour2: #f5f5db;
+    --accent-color2: #f5f5db;
     --primary-bg-color: #fbf7f5;
     --primary-bg-color-opaque1: #fbf7f5cc;
     --primary-bg-color-opaque2: #fbf7f540;
@@ -62,21 +62,24 @@ body {
 }
 h1 {
   text-align: center;
-  color: var(--primary-bg-color);
+  color: var(--text-color);
   font-weight: 600;
 }
 
 h2 {
-  color: var(--secondary-bg-color);
+  color: var(--text-color);
   font-weight: 600;
 }
 
-p {
+p a {
   color: var(--text-color);
   font-weight: 400;
 }
-
-p:link p:visited p:hover p:active {
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
   color: var(--text-color);
   text-decoration: underline;
 }
