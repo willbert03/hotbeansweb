@@ -1,7 +1,9 @@
 /* Dark Mode Variables */
 :root {
-  --accent-color1: #f05a3f;
-  --accent-color2: #f5f5db;
+  --accent-color1: #fa4032;
+  --accent-color2: #fa812f;
+  --accent-color3: #fab12f;
+  --accent-color4: #fef3e2;
   --primary-bg-color: #121212;
   --primary-bg-color-opaque1: #121212cc;
   --primary-bg-color-opaque2: #12121240;
@@ -19,8 +21,10 @@
 /* Light Mode Variables */
 @media (prefers-color-scheme: light) {
   :root {
-    --accent-color1: #f05a3f;
-    --accent-color2: #f5f5db;
+    --accent-color1: #fa4032;
+    --accent-color2: #fa812f;
+    --accent-color3: #fab12f;
+    --accent-color4: #fef3e2;
     --primary-bg-color: #fbf7f5;
     --primary-bg-color-opaque1: #fbf7f5cc;
     --primary-bg-color-opaque2: #fbf7f540;
