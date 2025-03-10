@@ -10,14 +10,43 @@
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta http-equiv="refresh" content="5; url=/index.html" />
-    <title>404 | Page Not Found</title>
+    <title>Page Not Found | Hot Beans Web</title>
     <style>
       body {
-        background: #222;
+        background-color: var(--primary-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      img {
+        max-width: 45vw;
+        height: auto;
+        transition: 0.25s ease-in-out;
+        filter: grayscale(100%);
+      }
+
+      img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.1);
+      }
+
+      p {
+        color: var(--text-color);
+        margin: 25px;
+      }
+
+      a:hover {
+        color: var(--accent-color1);
       }
     </style>
   </head>
   <body>
+    <img src="/img/logo.svg" alt="Hot Beans Web Logo" />
     <p>
       If you are not redirected after 5 seconds,
       <a href="/index.html">click here</a>.
