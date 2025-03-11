@@ -134,6 +134,28 @@ a:active {
   pointer-events: none;
 }
 
+span.icon > img {
+  height: 32px;
+}
+
+@media (min-width: 800px) {
+  span.icon {
+    display: none;
+  }
+  span.text {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 800px) {
+  span.icon {
+    display: inline-block;
+  }
+  span.text {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   .navbar a::before {
     backdrop-filter: brightness(0) opacity(0.5);
