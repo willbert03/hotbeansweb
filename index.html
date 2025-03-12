@@ -85,7 +85,7 @@
 
       .circle-container > .p {
         position: fixed;
-        bottom: 10%;
+        bottom: 15%;
         align: center;
         color: #222;
         z-index: 5;
@@ -95,6 +95,30 @@
         animation-delay: 0.9s;
       }
 
+      @media (max-width: 800px) {
+        .large {
+          width: 125vw;
+          height: 125vw;
+        }
+
+        .medium {
+          width: 91.67vw;
+          height: 91.67vw;
+        }
+
+        .small {
+          width: 58.33vw;
+          height: 58.33vw;
+        }
+
+        .logohome {
+          width: 75vw;
+          height: 75vw;
+        }
+        .circle-container > .p {
+          bottom: 28%;
+        }
+      }
       /* Initial loading animation */
       @keyframes popout {
         0% {

@@ -152,6 +152,24 @@ a:active {
   }
 }
 
+.navbar .icon svg {
+  width: 35px;
+  height: 35px;
+}
+.icon-hover {
+  display: none;
+}
+
+.navbar a:hover .icon-default,
+.navbar a:active .icon-default {
+  display: none;
+}
+
+.navbar a:hover .icon-hover,
+.navbar a:active .icon-hover {
+  display: inline-block;
+}
+
 @media (prefers-color-scheme: light) {
   .navbar a::before {
     backdrop-filter: brightness(0) opacity(0.5);
