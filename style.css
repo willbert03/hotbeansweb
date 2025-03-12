@@ -134,10 +134,6 @@ a:active {
   pointer-events: none;
 }
 
-span.icon > img {
-  height: 32px;
-}
-
 @media (min-width: 800px) {
   span.icon {
     display: none;

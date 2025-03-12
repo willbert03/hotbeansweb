@@ -40,13 +40,12 @@
     <title>Commissioned Work | Hot Beans Web</title>
   </head>
   <body>
-    <div class="navbar">
-      <a href="index.html"><span>Home</span></a>
-      <a href="about.html"><span>About Us</span></a>
-      <a href="#" class="active"><span>Commissioned Work</span></a>
-      <a href="employees.html"><span>Employees</span></a>
-      <a href="vacancies.html"><span>Vacancies</span></a>
-    </div>
+    <div id="navbar"></div>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => (document.getElementById("navbar").innerHTML = data));
+    </script>
 
     <div class="content">
       <div class="grid">
