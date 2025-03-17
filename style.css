@@ -64,6 +64,11 @@ body {
   font-optical-sizing: auto;
   font-size: 12pt;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   text-align: center;
   color: var(--text-color);
@@ -111,7 +116,7 @@ a:active {
   box-shadow: 0 4px 30px var(--shadows);
   backdrop-filter: blur(5px);
   border: 1px solid var(--primary-bg-color-opaque2);
-  z-index: 1000;
+  z-index: 10;
 }
 
 .navbar a {
@@ -208,11 +213,17 @@ a:active {
   height: auto;
   display: block;
   position: fixed;
-  top: 35px;
+  bottom: 75px;
   left: 35px;
   z-index: 10;
+  pointer-events: none;
 }
 
+@media (max-width: 800px) {
+  .logo {
+    display: none;
+  }
+}
 .logo img {
   display: block;
   width: 100%;
@@ -227,6 +238,12 @@ a:active {
   border-color: #33ff00; /* Dev outline */
   opacity: 0; /* Initially hidden */
   animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@media (max-width: 800px) {
+  .content {
+    margin: 20px 0px 75px 0px;
+  }
 }
 
 /* Fade-in animation */
