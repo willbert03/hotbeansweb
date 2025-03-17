@@ -79,6 +79,13 @@ p a {
   color: var(--text-color);
   font-weight: 400;
 }
+
+pb {
+  color: var(--text-color);
+  font-size: 13pt;
+  font-weight: 700;
+}
+
 a,
 a:link,
 a:visited,
