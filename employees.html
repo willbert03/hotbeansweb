@@ -11,154 +11,188 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="slideshow.css" />
     <style>
-          /* Subpage specific style */
+              /* Subpage specific style */
 
-          .grid a {
-            display: block;
-            height: 100%;
-          }
-          .grid {
-            display: grid;
-            height: 91vh;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(9, 1fr);
-            gap: 10px;
-          }
-          .box {
-            background-size: 200%;
-            background-color: var(--primary-bg-color);
-            color: var(--text-color);
-            border-radius: 25px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.25s ease-in-out;
-          }
-
-          .box:hover {
-            transform: scale(1.01);
-            z-index: 2;
-          }
-          .mobile-only {
-            display: block;
-          }
-          .desktop-only {
-            display: none;
-          }
-
-          .box-0 {
-            grid-column: 1 / span 2;
-            grid-row: 1;
-          }
-
-          .box-1 {
-            grid-column: 1 / span 2;
-            grid-row: 2;
-          }
-
-          .box-2 {
-            grid-column: 1 / span 2;
-            grid-row: 3;
-          }
-
-          .box-3 {
-            grid-column: 1 / span 2;
-            grid-row: 4;
-          }
-
-          .box-4 {
-            grid-column: 1 / span 2;
-            grid-row: 5;
-          }
-
-          .box-5 {
-            grid-column: 1 / span 2;
-            grid-row: 6;
-          }
-
-          .box-6 {
-            grid-column: 1 / span 2;
-            grid-row: 7 / span 3;
-            padding: 20px;
-          }
-          @media (min-width: 800px) {
-            .grid {
-              grid-template-columns: repeat(3, 1fr);
-              grid-template-rows: repeat(3, 1fr);
-              gap: 8px;
-            }
-            .mobile-only {
-              display: none;
-            }
-            .desktop-only {
-              display: block;
-            }
-
-            .box-0 {
-              grid-column: 1;
-              grid-row: 1;
-            }
-
-            .box-1 {
-              grid-column: 2;
-              grid-row: 1;
-            }
-
-            .box-2 {
-              grid-column: 1;
-              grid-row: 2;
-            }
-
-            .box-3 {
-              grid-column: 2;
-              grid-row: 2;
-            }
-
-            .box-4 {
-              grid-column: 1;
-              grid-row: 3;
-            }
-
-            .box-5 {
-              grid-column: 2;
-              grid-row: 3;
-            }
-
-            .box-6 {
-              grid-column: 3;
-              grid-row: 1 / span 3;
-            }
-          }
-
-            .grid-inner {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              grid-template-rows: repeat(1, 1fr);
-              height: 100%
-            }
-            .item-inner {
-              background-size: 200%;
-              color: var(--text-color);
-              padding: 20px;
-              position: relative;
-              overflow: hidden;
-            }
-
-            .item-inner img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-              .item-inner-0 {
-                grid-column: 1;
-                grid-row: 1;
+              .grid {
+                display: grid;
+                height: auto;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+                gap: 10px;
               }
 
-              .item-inner-1 {
-                grid-column: 2;
-                grid-row: 1;
-                padding: 0px;
+              .grid a {
+                display: block;
+                height: 100%;
               }
-      </div>
+              .box {
+                background-size: 200%;
+                background-color: var(--primary-bg-color);
+                color: var(--text-color);
+                border-radius: 25px;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.25s ease-in-out;
+              }
+
+              .box:hover {
+                transform: scale(1.01);
+                z-index: 2;
+              }
+
+      .mobile-only {
+        display: block;
+      }
+      .desktop-only {
+        display: none;
+      }
+
+      .box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7, .box-8, .box-9 {
+        height: 200px;}
+        .box-0 {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .box-1 {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .box-2 {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        .box-3 {
+          grid-column: 1;
+          grid-row: 4;
+        }
+
+        .box-4 {
+          grid-column: 1;
+          grid-row: 5;
+        }
+
+        .box-5 {
+          grid-column: 1;
+          grid-row: 6;
+        }
+
+        .box-6 {
+          grid-column: 1;
+          grid-row: 7;
+        }
+
+        .box-7 {
+          grid-column: 1;
+          grid-row: 8;
+        }
+
+        .box-8 {
+          grid-column: 1;
+          grid-row: 9;
+        }
+
+        .box-9 {
+          grid-column: 1;
+          grid-row: 10;
+        }
+        @media (min-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          gap: 8px;
+        }
+        .mobile-only {
+          display: none;
+        }
+        .desktop-only {
+          display: block;
+        }
+
+        .box-0 {
+          grid-column: 1 / span 3;
+          grid-row: 1;
+        }
+
+        .box-1 {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .box-2 {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        .box-3 {
+          grid-column: 3;
+          grid-row: 2;
+        }
+
+        .box-4 {
+          grid-column: 1;
+          grid-row: 3;
+        }
+
+        .box-5 {
+          grid-column: 2;
+          grid-row: 3;
+        }
+
+        .box-6 {
+          grid-column: 3;
+          grid-row: 3;
+        }
+
+        .box-7 {
+          grid-column: 1;
+          grid-row: 4;
+        }
+
+        .box-8 {
+          grid-column: 2;
+          grid-row: 4;
+        }
+
+        .box-9 {
+          grid-column: 3;
+          grid-row: 4;
+        }
+
+      }
+
+                .grid-inner {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  grid-template-rows: repeat(1, 1fr);
+                  height: 100%
+                }
+                .box-inner {
+                  background-size: 200%;
+                  color: var(--text-color);
+                  padding: 20px;
+                  position: relative;
+                  overflow: hidden;
+                }
+
+                .box-inner img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+                  .box-inner-0 {
+                    grid-column: 1;
+                    grid-row: 1;
+                  }
+
+                  .box-inner-1 {
+                    grid-column: 2;
+                    grid-row: 1;
+                    padding: 0px;
+                  }
+          </div>
     </style>
     <title>Commissioned Work | Hot Beans Web</title>
   </head>
@@ -306,52 +340,40 @@
 
     <div class="content">
       <div class="grid">
-        <div class="box box-0">
+        <div class="box box-0"><h1>Our Employees</h1></div>
+        <div class="box box-1">
           <div class="grid-inner">
-            <div class="item-inner item-inner-0">
+            <div class="box-inner box-inner-0">
               <pb>Junior Web Developer</pb>
               <p>Cheese</p>
             </div>
-            <div class="item-inner item-inner-1">
+            <div class="box-inner box-inner-1">
               <img
                 src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
               />
             </div>
           </div>
         </div>
-        <div class="box box-1">
-          <div class="grid-inner">
-            <div class="item-inner item-inner-0">
-              <pb>Junior Web Developer</pb>
-              <p>Cheese</p>
-            </div>
-            <div class="item-inner item-inner-1">
-              <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-lays-happily_cat-insurance.jpg"
-              />
-            </div>
-          </div>
-        </div>
         <div class="box box-2">
           <div class="grid-inner">
-            <div class="item-inner item-inner-0">
+            <div class="box-inner box-inner-0">
               <pb>Junior Web Developer</pb>
               <p>Cheese</p>
             </div>
-            <div class="item-inner item-inner-1">
+            <div class="box-inner box-inner-1">
               <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Kitten-laying-in-a-mans-arms_Cat-insurance.jpg"
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
               />
             </div>
           </div>
         </div>
         <div class="box box-3">
           <div class="grid-inner">
-            <div class="item-inner item-inner-0">
-              <pb>Apprentice Web Developer</pb>
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
               <p>Cheese</p>
             </div>
-            <div class="item-inner item-inner-1">
+            <div class="box-inner box-inner-1">
               <img
                 src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
               />
@@ -360,31 +382,82 @@
         </div>
         <div class="box box-4">
           <div class="grid-inner">
-            <div class="item-inner item-inner-0">
-              <pb>Senior Web Developer</pb>
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
               <p>Cheese</p>
             </div>
-            <div class="item-inner item-inner-1">
+            <div class="box-inner box-inner-1">
               <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-lays-happily_cat-insurance.jpg"
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
               />
             </div>
           </div>
         </div>
         <div class="box box-5">
           <div class="grid-inner">
-            <div class="item-inner item-inner-0">
-              <pb>Senior Web Developer</pb>
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
               <p>Cheese</p>
             </div>
-            <div class="item-inner item-inner-1">
+            <div class="box-inner box-inner-1">
               <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Kitten-laying-in-a-mans-arms_Cat-insurance.jpg"
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
               />
             </div>
           </div>
         </div>
-        <div class="box box-6"><h1>Suggested Web Development Courses</h1></div>
+        <div class="box box-6">
+          <div class="grid-inner">
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
+              <p>Cheese</p>
+            </div>
+            <div class="box-inner box-inner-1">
+              <img
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="box box-7">
+          <div class="grid-inner">
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
+              <p>Cheese</p>
+            </div>
+            <div class="box-inner box-inner-1">
+              <img
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="box box-8">
+          <div class="grid-inner">
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
+              <p>Cheese</p>
+            </div>
+            <div class="box-inner box-inner-1">
+              <img
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="box box-9">
+          <div class="grid-inner">
+            <div class="box-inner box-inner-0">
+              <pb>Junior Web Developer</pb>
+              <p>Cheese</p>
+            </div>
+            <div class="box-inner box-inner-1">
+              <img
+                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>
