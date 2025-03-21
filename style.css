@@ -85,6 +85,12 @@ p a {
   font-weight: 400;
 }
 
+ul {
+  list-style-type: "- "; /* Adds a dash as the bullet */
+  padding-left: 1em; /* Adjust as needed */
+  margin: 0;
+}
+
 pb {
   color: var(--text-color);
   font-size: 13pt;
