@@ -27,6 +27,7 @@ You have recently joined a web development company, Hot Beans Web as a junior we
 - Slide Hover Button Effect: [codepen.io](https://codepen.io/RazorXio/pen/gMaoOW)
 - Slideshow Carousel: [cssscript.com](https://www.cssscript.com/infinite-carousel-autoplay/)
 - Mobile Navbar Images: [codepen.io](https://codepen.io/giannisKapa/pen/wBaPwe)
+- Forms Placeholder Text [stackoverflow.com](https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery)
 
 ## Tools Used
 

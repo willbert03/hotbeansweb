@@ -136,6 +136,7 @@ a:active {
   font-size: 17px;
   position: relative;
   overflow: hidden;
+  font-weight: 400;
 }
 
 .navbar a::before {
@@ -152,13 +153,11 @@ a:active {
   pointer-events: none;
 }
 
-@media (min-width: 800px) {
-  span.icon {
-    display: none;
-  }
-  span.text {
-    display: inline-block;
-  }
+span.icon {
+  display: none;
+}
+span.text {
+  display: inline-block;
 }
 
 @media (max-width: 800px) {
@@ -197,7 +196,6 @@ a:active {
 .navbar a:hover {
   color: var(--primary-bg-color);
 }
-
 .navbar a:hover::before {
   bottom: 0;
 }
@@ -205,6 +203,7 @@ a:active {
 .navbar a span {
   color: var(--text-color);
   position: relative;
+  transition: font-weight 0.15s ease-in-out;
 }
 
 .navbar a:hover span {
@@ -219,7 +218,7 @@ a:active {
   height: auto;
   display: block;
   position: fixed;
-  bottom: 75px;
+  top: 35px;
   left: 35px;
   z-index: 10;
   pointer-events: none;
