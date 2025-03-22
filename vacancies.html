@@ -24,8 +24,9 @@
         color: var(--text-color);
         border-radius: 25px;
         position: relative;
-        overflow: hidden;
+        overflow: auto;
         transition: transform 0.25s ease-in-out;
+        padding: 25px;
       }
       .box a {
         text-decoration: none;
@@ -41,7 +42,9 @@
       .box-2,
       .box-3,
       .box-4 {
-        height: 300px;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
       }
       .mobile-only {
         display: block;
@@ -53,6 +56,13 @@
       .box-0 {
         grid-column: 1;
         grid-row: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 0px;
+        padding: 35px !important;
+        overflow: hidden;
       }
 
       .box-1 {
@@ -84,16 +94,21 @@
           grid-template-columns: repeat(3, 1fr);
           grid-template-rows: auto 1fr 1fr;
           gap: 10px;
-          height: auto;
+          height: 91vh;
         }
-        .box {
-          height: auto;
+        .box::-webkit-scrollbar {
+          display: none;
         }
         .box-1,
         .box-2,
         .box-3,
         .box-4 {
-          height: 250px;
+          height: auto;
+          background-size: 200%;
+          color: var(--text-color);
+          position: relative;
+          overflow: auto;
+          scrollbar-width: none;
         }
         .box-1:hover,
         .box-2:hover,
@@ -109,6 +124,8 @@
           align-items: center;
           text-align: center;
           justify-content: center;
+          height: 0px;
+          padding: 35px !important;
         }
 
         .box-1 {
@@ -131,46 +148,68 @@
         .box-5 {
           grid-column: 3;
           grid-row: 1 / span 3;
-          display: flex;
-          flex-direction: column;
-          overflow: auto;
-          padding: 20px;
         }
       }
-
-      .grid-inner {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        height: 100%;
-      }
-      .box-inner {
-        background-size: 200%;
+      .apply {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12.5px;
+        width: auto;
+        height: 50px;
+        background-color: var(--accent-color3);
+        transition: background-color 0.25s ease-in-out,
+          font-weight 0.25s ease-in-out, font-size 0.25s ease-in-out;
+        text-decoration: none;
         color: var(--text-color);
-        padding: 15px;
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .apply:hover {
+        background-color: var(--accent-color2);
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5px;
+      }
+      .course {
+        background-color: var(--accent-color4);
+        color: var(--text-color);
+        border-radius: 12.5px;
+        height: 20px;
         position: relative;
-        overflow: none;
+        overflow: hidden;
+        transition: background-color 0.25s ease-in-out,
+          font-weight 0.25s ease-in-out, font-size 0.25s ease-in-out;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        display: inline-block;
+      }
+      .course:hover {
+        background-color: var(--accent-color3);
+        font-size: 16px;
+        font-weight: 700;
       }
 
-      .box-inner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .box-inner p {
-        font-size: 11pt;
-        font-weight: 300;
-      }
-      .box-inner-0 {
+      .course-0 {
         grid-column: 1;
         grid-row: 1;
       }
 
-      .box-inner-1 {
-        grid-column: 2;
-        grid-row: 1;
-        padding: 0px;
+      .course-1 {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .course-2 {
+        grid-column: 1;
+        grid-row: 3;
       }
     </style>
     <title>Current Vacancies | Hot Beans Web</title>
@@ -321,71 +360,71 @@
       <div class="grid">
         <div class="box box-0"><h1>Current Vacancies</h1></div>
         <div class="box box-1">
-          <a href="google.com"
-            ><div class="grid-inner">
-              <div class="box-inner box-inner-0">
-                <pb>Junior Frontend Web Developer</pb>
-                <p>
-                  You’ll work alongside our development team to build and
-                  maintain websites and web applications.
-                </p>
-              </div>
-              <div class="box-inner box-inner-1">
-                <img
-                  src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
-                />
-              </div></div
-          ></a>
+          <pb>Junior Frontend Web Developer</pb>
+          <p>
+            As a Junior Web Developer, you’ll assist in designing, building, and
+            maintaining modern websites and web applications. You'll work with
+            HTML, CSS, JavaScript, and frameworks like React or Vue.js, ensuring
+            responsive and user-friendly experiences. Your role includes
+            implementing designs, debugging code, and collaborating with
+            designers and senior developers to bring projects to life. This is a
+            great opportunity to grow your front-end skills, learn industry best
+            practices, and gain valuable experience in a fast-paced development
+            environment.
+          </p>
+          <div class="apply">
+            <a href="apply.html" class="button">Apply Now</a>
+          </div>
         </div>
         <div class="box box-2">
-          <div class="grid-inner">
-            <div class="box-inner box-inner-0">
-              <pb>Junior Backend Web Developer</pb>
-              <p>
-                You'll join our server-side development team to build and
-                maintain web applications and APIs. You will learn languages
-                like Node.js and PHP.
-              </p>
-            </div>
-            <div class="box-inner box-inner-1">
-              <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
-              />
-            </div>
+          <pb>Junior Backend Web Developer</pb>
+          <p>
+            As a Junior Backend Developer, you’ll be responsible for developing
+            and maintaining the server-side logic of websites and applications.
+            Working with Node.js, Python, PHP, or Ruby, you’ll build and
+            optimize databases, create APIs, and ensure seamless data
+            processing. Your responsibilities will include writing efficient,
+            scalable code, debugging backend issues, and collaborating with
+            front-end developers to deliver complete solutions. This role is
+            ideal for someone with a strong foundation in backend development,
+            looking to refine their skills and gain hands-on experience in a
+            professional setting.
+          </p>
+          <div class="apply">
+            <a href="apply.html" class="button">Apply Now</a>
           </div>
         </div>
         <div class="box box-3">
-          <div class="grid-inner">
-            <div class="box-inner box-inner-0">
-              <pb>Apprentice Web Developer</pb>
-              <p>
-                Looking to kickstart their career in web development? Learn
-                hands on experience while gaining training in front-end and
-                back-end development.
-              </p>
-            </div>
-            <div class="box-inner box-inner-1">
-              <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
-              />
-            </div>
+          <pb>Apprentice Web Developer</pb>
+          <p>
+            As an Apprentice Web Developer, you'll combine on-the-job training
+            with structured learning to build your technical skills. Under the
+            guidance of experienced developers, you'll gain hands-on experience
+            in coding, testing, and deploying websites and applications. You'll
+            work with modern technologies, learn industry standards, and develop
+            problem-solving skills while working on real projects. This role is
+            perfect for someone passionate about web development and eager to
+            gain practical experience while studying towards a qualification.
+          </p>
+          <div class="apply">
+            <a href="apply.html" class="button">Apply Now</a>
           </div>
         </div>
         <div class="box box-4">
-          <div class="grid-inner">
-            <div class="box-inner box-inner-0">
-              <pb>Senior Backend Developer</pb>
-              <p>
-                Do you already know technologies like Node.js, PHP, Python, or
-                similar. Join our team to mentor junior developers and lead our
-                team.
-              </p>
-            </div>
-            <div class="box-inner box-inner-1">
-              <img
-                src="https://perfectpetinsurance.co.uk/wp-content/uploads/2025/02/Cat-Insurance_Tortoiseshell-cat.jpg"
-              />
-            </div>
+          <pb>Senior Backend Developer</pb>
+          <p>
+            As a Senior Backend Developer, you'll lead the development of
+            scalable and efficient backend systems, ensuring high performance
+            and security. You'll work with databases, cloud services, and APIs,
+            architecting robust solutions that power web and mobile
+            applications. Your role involves designing database structures,
+            optimizing code performance, managing server infrastructure, and
+            mentoring junior developers. With a deep understanding of backend
+            technologies and best practices, you'll play a key role in shaping
+            and improving the company's digital products.
+          </p>
+          <div class="apply">
+            <a href="apply.html" class="button">Apply Now</a>
           </div>
         </div>
         <div class="box box-5">
@@ -393,34 +432,42 @@
           <p>
             We are looking for people who are creative proactive thinkers with a
             passion for technology. Someone who has good problem skills and a
-            strong attention to detail. Someome who is a team player who can
-            colaborate and communicate with clients and team members well.
+            strong attention to detail. Someone who is a team player who can
+            collaborate and communicate with clients and team members well.
           </p>
-          <p>Required qualifications include:</p>
+          <p style="margin-bottom: 5px">Required qualifications include:</p>
+
           <ul>
             <li>GCSE English, Maths, and a STEM subject grade 5 or above</li>
             <li>A-Level ICT or Computer Studies</li>
-            <li>Optional:Certified CompTIA A+ cerficiation</li>
+            <li>Optional: Certified CompTIA A+ cerficiation</li>
           </ul>
           <p>
             If you do not think you have the right skills for the job, check out
             these online web development courses:
           </p>
-          <ul>
-            <li>
-              <a href="https://www.w3schools.com/" target="_blank"
-                >w3schools (Beginner)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.freecodecamp.org/" target="_blank"
-                >freeCodeCamp (Intermediate)</a
-              >
-            </li>
-            <li>
-              <a href="https://web.dev" target="_blank">web.dev (Advanced)</a>
-            </li>
-          </ul>
+          <div class="course-grid">
+            <a href="https://www.w3schools.com/"
+              ><div class="course course-0">w3schools</div></a
+            >
+            <a href="https://www.freecodecamp.org/"
+              ><div class="course course-1">freeCodeCamp</div></a
+            >
+            <a href="https://web.dev"
+              ><div class="course course-2">web.dev</div></a
+            >
+          </div>
+          <h1>Job Benefits</h1>
+          <p>
+            We offer a competitive salary, flexible working hours, and a
+            supportive work environment. You'll have the opportunity to work on
+            exciting projects, learn new technologies, and grow your career in
+            web development. We provide training and development opportunities,
+            mentorship from experienced developers, and a chance to make a real
+            impact on our products and services. If you're passionate about
+            technology and looking for a challenging and rewarding role, we'd
+            love to hear from you.
+          </p>
         </div>
       </div>
     </div>
