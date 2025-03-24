@@ -84,6 +84,26 @@
         padding: 35px !important;
       }
 
+      .box-0 .logo {
+          position: absolute;
+          left: 50px !important;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          pointer-events: none;
+        }
+
+        .box-0 .logo img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        @media (max-width: 800px) {
+          .box-0 .logo {
+            display: none;
+          }
+        }
       .box-1,
       .box-2 {
         height: auto;
@@ -256,6 +276,9 @@
     <div class="content">
       <div class="grid">
         <div class="box box-0">
+          <div class="logo">
+            <img src="/img/logo.svg" alt="HBW Corner Logo" />
+          </div>
           <h1>Job Application</h1>
         </div>
         <div class="box box-1">
@@ -420,7 +443,6 @@
         </div>
       </div>
     </div>
-    <div class="logo"><img src="/img/logo.svg" alt="HBW Corner Logo" /></div>
     <script src="pagetrans.js"></script>
     <script>
       // Define position titles based on the key

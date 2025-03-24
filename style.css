@@ -274,3 +274,27 @@ span.text {
     opacity: 0;
   }
 }
+
+/* Button */
+.btn {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12.5px;
+  width: auto;
+  height: 50px;
+  background-color: var(--accent-color3);
+  transition: background-color 0.25s ease-in-out, font-weight 0.25s ease-in-out,
+    font-size 0.25s ease-in-out;
+  text-decoration: none;
+  color: #000000 !important;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--accent-color2);
+  font-weight: 700;
+  font-size: 16px;
+}
