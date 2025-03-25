@@ -128,6 +128,10 @@
       input:focus::placeholder {
         color: transparent;
       }
+
+      input:invalid {
+        border: 1px solid var(--accent-color1);
+      }
     </style>
     <title>Job Application | Hot Beans Web</title>
   </head>
@@ -291,8 +295,8 @@
               name="fname"
               placeholder="Enter your first name"
               required
-              minlength="3"
-              maxlength="12"
+              minlength="2"
+              maxlength="50"
               autofocus
             /><br />
 
@@ -303,8 +307,8 @@
               name="lname"
               placeholder="Enter your last name"
               required
-              minlength="3"
-              maxlength="12"
+              minlength="2"
+              maxlength="50"
             /><br />
 
             <label for="dob">Date of Birth:</label><br />
@@ -380,8 +384,13 @@
             <input type="file" id="cl" name="cl" accept=".pdf,.docx" /><br />
 
             <br />
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Clear" />
+            <input class="btn" type="submit" value="Submit" />
+            <input
+              class="btn"
+              style="background-color: var(--accent-color4)"
+              type="reset"
+              value="Clear"
+            />
           </form>
 
           <script>
