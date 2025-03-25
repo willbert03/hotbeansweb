@@ -11,70 +11,36 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="slideshow.css" />
     <style>
-      /* Subpage specific style */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: auto;
-        gap: 10px;
-      }
-      .box {
-        background-size: 200%;
-        background-color: var(--primary-bg-color);
-        color: var(--text-color);
-        border-radius: 25px;
-        position: relative;
-        overflow: auto;
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-      }
-      .box a {
-        text-decoration: none;
-      }
-      .mobile-only {
-        display: block;
-      }
-      .desktop-only {
-        display: none;
-      }
+        /* Subpage specific style */
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: auto;
+          gap: 10px;
+        }
+        .box {
+          background-size: 200%;
+          background-color: var(--primary-bg-color);
+          color: var(--text-color);
+          border-radius: 25px;
+          position: relative;
+          overflow: auto;
+          padding: 25px;
+          display: flex;
+          flex-direction: column;
+        }
+        .box a {
+          text-decoration: none;
+        }
+        .mobile-only {
+          display: block;
+        }
+        .desktop-only {
+          display: none;
+        }
 
-      .box-0 {
-      grid-column: 1;
-      grid-row: 1;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      height: 0px;
-      padding: 35px !important;
-      overflow: hidden;
-      }
-
-      .box-1 {
+        .box-0 {
         grid-column: 1;
-        grid-row: 2;
-      }
-
-      .box-2 {
-        grid-column: 1;
-        grid-row: 3;
-      }
-      @media (min-width: 800px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto 3fr 1fr;
-        gap: 10px;
-        height: 91vh;
-      }
-      .mobile-only {
-        display: none;
-      }
-      .desktop-only {
-        display: block;
-      }
-      .box-0 {
-        grid-column: 1 / span 2;
         grid-row: 1;
         display: flex;
         align-items: center;
@@ -82,56 +48,122 @@
         justify-content: center;
         height: 0px;
         padding: 35px !important;
-      }
-
-      .box-0 .logo {
-          position: absolute;
-          left: 50px !important;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 50px;
-          pointer-events: none;
+        overflow: hidden;
         }
 
-        .box-0 .logo img {
+        .box-1 {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .box-2 {
+          grid-column: 1;
+          grid-row: 3;
+        }
+        @media (min-width: 800px) {
+        .grid {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: auto 3fr 1fr;
+          gap: 10px;
+          height: 91vh;
+        }
+        .mobile-only {
+          display: none;
+        }
+        .desktop-only {
           display: block;
-          width: 100%;
-          height: auto;
+        }
+        .box-0 {
+          grid-column: 1 / span 2;
+          grid-row: 1;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          height: 0px;
+          padding: 35px !important;
         }
 
-        @media (max-width: 800px) {
-          .box-0 .logo {
-            display: none;
+        .box-0 .logo {
+            position: absolute;
+            left: 50px !important;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            pointer-events: none;
           }
+
+          .box-0 .logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+
+          @media (max-width: 800px) {
+            .box-0 .logo {
+              display: none;
+            }
+          }
+        .box-1,
+        .box-2 {
+          height: auto;
+          background-size: 200%;
+          color: var(--text-color);
+          position: relative;
+          overflow: auto;
+          scrollbar-width: none;
         }
-      .box-1,
-      .box-2 {
-        height: auto;
-        background-size: 200%;
-        color: var(--text-color);
-        position: relative;
-        overflow: auto;
-        scrollbar-width: none;
+
+        .box-1 {
+          grid-column: 1 / span 2;
+          grid-row: 2 / span 2;
+        }
+
+        .box-2 {
+          grid-column: 3;
+          grid-row: 1 / span 3;
+        }
+
+        /* Form styles */
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        textarea {
+          display: flex;
+          margin-top: 5px;
+          width: 100%;
+          height: 20px;
+          background-color: var(--tertiary-bg-color);
+          color: var(--text-color);
+          border: 1px solid var(--highlights);
+          border-radius: 5px;
+        }
+
+        .row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
       }
 
-      .box-1 {
-        grid-column: 1 / span 2;
-        grid-row: 2 / span 2;
+      .row > .form-group {
+        flex: 1;
+        min-width: 200px;
+      }
+      .full-width {
+        width: 100%;
       }
 
-      .box-2 {
-        grid-column: 3;
-        grid-row: 1 / span 3;
-      }
-
-
-      input:focus::placeholder {
-        color: transparent;
-      }
-
-      input:invalid {
-        border: 1px solid var(--accent-color1);
-      }
+        input:focus::placeholder {
+          color: transparent;
+        }
     </style>
     <title>Job Application | Hot Beans Web</title>
   </head>
@@ -287,164 +319,122 @@
         </div>
         <div class="box box-1">
           <h2><span id="position-title"></span></h2>
-          <form id="applicationForm">
-            <label for="fname">First Name:</label><br />
-            <input
-              type="text"
-              id="fname"
-              name="fname"
-              placeholder="Enter your first name"
-              required
-              minlength="2"
-              maxlength="50"
-              autofocus
-            /><br />
 
-            <label for="lname">Last Name:</label><br />
-            <input
-              type="text"
-              id="lname"
-              name="lname"
-              placeholder="Enter your last name"
-              required
-              minlength="2"
-              maxlength="50"
-            /><br />
+          <form>
+            <div class="row">
+              <div class="form-group">
+                <label for="fname">First Name</label><br />
+                <input
+                  type="text"
+                  id="fname"
+                  placeholder="Enter your first name"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                  autofocus
+                />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label><br />
+                <input
+                  type="text"
+                  id="lname"
+                  placeholder="Enter your last name"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                />
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@domain.com"
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                required
+                minlength="3"
+                maxlength="264"
+              />
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="phone">UK Phone Number</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="07*** ******"
+                  pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
+                  required
+                  minlength="11"
+                  maxlength="11"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  placeholder="YYYY-MM-DD"
+                  required
+                />
+              </div>
+            </div>
 
-            <label for="dob">Date of Birth:</label><br />
-            <input type="date" id="dob" name="DOB" required /><br />
+            <div class="form-group">
+              <label for="addressLine1">Address Line</label>
+              <input
+                type="text"
+                id="addressLine1"
+                name="addressLine1"
+                placeholder="Building and street"
+                required
+              />
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="city">Town/City</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Town or city"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input
+                  type="text"
+                  id="postcode"
+                  name="postcode"
+                  placeholder="e.g. SW1A 1AA"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="cv">Upload CV:</label>
+              <input
+                type="file"
+                id="cv"
+                name="cv"
+                accept=".pdf,.docx"
+                required
+              /><br />
 
-            <label for="address">Home Address:</label><br />
-            <input
-              type="text"
-              id="address"
-              name="address"
-              placeholder="Start typing your address"
-              required
-              minlength="10"
-              maxlength="256"
-            /><br />
-
-            <label for="email">Email Address:</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="yourname@email.com"
-              required
-              minlength="3"
-              maxlength="264"
-            /><br />
-
-            <label for="reemail">Confirm Email Address:</label><br />
-            <input
-              type="email"
-              id="reemail"
-              name="reemail"
-              placeholder="yourname@email.com"
-              required
-              minlength="3"
-              maxlength="264"
-            /><br />
-
-            <label for="tel">Mobile Phone Number:</label><br />
-            <input
-              type="tel"
-              id="tel"
-              name="tel"
-              placeholder="07*** ******"
-              pattern="^07\d{9}$"
-              required
-              minlength="11"
-              maxlength="11"
-            /><br />
-
-            <label for="retel">Confirm Mobile Phone Number:</label><br />
-            <input
-              type="tel"
-              id="retel"
-              name="retel"
-              placeholder="07*** ******"
-              pattern="^07\d{9}$"
-              required
-              minlength="11"
-              maxlength="11"
-            /><br />
-
-            <label for="cv">Upload CV:</label><br />
-            <input
-              type="file"
-              id="cv"
-              name="cv"
-              accept=".pdf,.docx"
-              required
-            /><br />
-
-            <label for="cl">Upload Cover Letter:</label><br />
-            <input type="file" id="cl" name="cl" accept=".pdf,.docx" /><br />
-
-            <br />
-            <input class="btn" type="submit" value="Submit" />
-            <input
-              class="btn"
-              style="background-color: var(--accent-color4)"
-              type="reset"
-              value="Clear"
-            />
+              <label for="cl">Upload Cover Letter:</label>
+              <input type="file" id="cl" name="cl" accept=".pdf,.docx" /><br />
+            </div>
+            <div class="form-group">
+              <button type="submit">Submit</button>
+              <button type="reset">Clear</button>
+            </div>
           </form>
-
-          <script>
-            // Validates DOB between 16 and 100 years ago
-            let today = new Date();
-            let maxDate = new Date(
-              today.getFullYear() - 16,
-              today.getMonth(),
-              today.getDate()
-            )
-              .toISOString()
-              .split("T")[0];
-            let minDate = new Date(
-              today.getFullYear() - 100,
-              today.getMonth(),
-              today.getDate()
-            )
-              .toISOString()
-              .split("T")[0];
-
-            document.getElementById("dob").max = maxDate;
-            document.getElementById("dob").min = minDate;
-
-            // Imports and validates form data
-            document
-              .getElementById("applicationForm")
-              .addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                let email = document.getElementById("email").value;
-                let reemail = document.getElementById("reemail").value;
-                let tel = document.getElementById("tel").value;
-                let retel = document.getElementById("retel").value;
-
-                // Verifies email address match
-                if (email !== reemail) {
-                  alert("Email addresses do not match!");
-                  return;
-                }
-
-                // Verifies email address match
-                if (tel !== retel) {
-                  alert("Phone numbers do not match!");
-                  return;
-                }
-
-                // Redirect and reset after submission
-                document.getElementById("applicationForm").reset();
-                alert(
-                  "Application received. We will review and respond to your application shortly. Returning to homepage."
-                );
-                window.location.href = "index.html";
-              });
-          </script>
         </div>
         <div class="box box-2">
           <h1>Application Details</h1>
