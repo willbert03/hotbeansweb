@@ -135,14 +135,15 @@
         input[type="email"],
         input[type="date"],
         input[type="file"],
+        input[type="number"],
         textarea {
           display: flex;
           margin-top: 5px;
           width: 100%;
           height: 20px;
-          background-color: var(--tertiary-bg-color);
+          background-color: var(--secondary-bg-color);
           color: var(--text-color);
-          border: 1px solid var(--highlights);
+          border: 1px solid var(--highlights); */
           border-radius: 5px;
         }
 
@@ -318,9 +319,11 @@
           <h1>Job Application</h1>
         </div>
         <div class="box box-1">
-          <h2><span id="position-title"></span></h2>
-
-          <form>
+          <form style="border: 1px solid aqua">
+            <div class="form-group">
+              <label for="position-input">Position</label><br />
+              <input type="text" id="position-input" name="position" disabled />
+            </div>
             <div class="row">
               <div class="form-group">
                 <label for="fname">First Name</label><br />
@@ -351,9 +354,18 @@
               <input
                 type="email"
                 id="email"
-                name="email"
                 placeholder="example@domain.com"
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                required
+                minlength="3"
+                maxlength="264"
+              />
+            </div>
+            <div class="form-group full-width">
+              <label for="email">Confirm Email</label>
+              <input
+                type="email"
+                id="conf-email"
+                placeholder="example@domain.com"
                 required
                 minlength="3"
                 maxlength="264"
@@ -363,9 +375,8 @@
               <div class="form-group">
                 <label for="phone">UK Phone Number</label>
                 <input
-                  type="text"
+                  type="number"
                   id="phone"
-                  name="phone"
                   placeholder="07*** ******"
                   pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
                   required
@@ -375,22 +386,15 @@
               </div>
               <div class="form-group">
                 <label for="dob">Date of Birth</label>
-                <input
-                  type="date"
-                  id="dob"
-                  name="dob"
-                  placeholder="YYYY-MM-DD"
-                  required
-                />
+                <input type="date" id="dob" placeholder="YYYY-MM-DD" required />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="addressLine1">Address Line</label>
+              <label for="address">Address Line</label>
               <input
                 type="text"
-                id="addressLine1"
-                name="addressLine1"
+                id="address"
                 placeholder="Building and street"
                 required
               />
@@ -401,7 +405,6 @@
                 <input
                   type="text"
                   id="city"
-                  name="city"
                   placeholder="Town or city"
                   required
                 />
@@ -411,28 +414,24 @@
                 <input
                   type="text"
                   id="postcode"
-                  name="postcode"
                   placeholder="e.g. SW1A 1AA"
                   required
                 />
               </div>
             </div>
-            <div class="form-group full-width">
-              <label for="cv">Upload CV:</label>
-              <input
-                type="file"
-                id="cv"
-                name="cv"
-                accept=".pdf,.docx"
-                required
-              /><br />
-
-              <label for="cl">Upload Cover Letter:</label>
-              <input type="file" id="cl" name="cl" accept=".pdf,.docx" /><br />
+            <div class="row">
+              <div class="form-group">
+                <label for="cv">Upload CV:</label>
+                <input type="file" id="cv" accept=".pdf,.docx" required /><br />
+              </div>
+              <div class="form-group">
+                <label for="cl">Upload Cover Letter:</label>
+                <input type="file" id="cl" accept=".pdf,.docx" /><br />
+              </div>
             </div>
             <div class="form-group">
-              <button type="submit">Submit</button>
-              <button type="reset">Clear</button>
+              <button type="submit" class="btn">Submit</button>
+              <button type="reset" class="btn">Clear</button>
             </div>
           </form>
         </div>
@@ -465,13 +464,14 @@
       if (!positionKey || !positionTitles[positionKey]) {
         window.location.href = "vacancies.html";
       } else {
-        // Display the position title
-        document.getElementById("position-title").textContent =
-          positionTitles[positionKey];
-      }
+        const positionTitle = positionTitles[positionKey];
 
-      // Display it on the page
-      document.getElementById("position-title").textContent = positionTitle;
+        // Autofill the form field (assuming the field has an ID of "position-input")
+        const positionInput = document.getElementById("position-input");
+        if (positionInput) {
+          positionInput.value = positionTitle;
+        }
+      }
     </script>
   </body>
 </html>
