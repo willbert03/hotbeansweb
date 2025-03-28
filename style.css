@@ -292,6 +292,8 @@ span.text {
   font-weight: 400;
   font-size: 15px;
   cursor: pointer;
+  padding: 0 20px;
+  line-height: 50px; /* Ensures text stays vertically centered */
 }
 .btn:hover {
   background-color: var(--accent-color2);
