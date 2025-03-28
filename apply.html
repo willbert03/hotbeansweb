@@ -24,10 +24,8 @@
         color: var(--text-color);
         border-radius: 25px;
         position: relative;
-          overflow: auto;
+        overflow: auto;
         padding: 25px;
-        display: flex;
-        flex-direction: column;
       }
       .box a {
         text-decoration: none;
@@ -63,9 +61,8 @@
       @media (min-width: 800px) {
         .grid {
           grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: auto 3fr 1fr;
+          grid-template-rows: auto;
           gap: 10px;
-          height: 91vh;
         }
         .mobile-only {
           display: none;
@@ -123,42 +120,55 @@
           grid-column: 3;
           grid-row: 1 / span 3;
         }
-
-        /* Form styles */
-        form {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-top: 20px;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="file"],
-        input[type="date"],
-        input[type="number"],
-        textarea {
-          display: flex;
-          margin-top: 5px;
-          width: 100%;
-          height: 25px;
-          background-color: var(--secondary-bg-color);
-          color: var(--text-color);
-          border: 1px solid var(--highlights);
-          appearance: none;
-          border-radius: 5px;
-          box-sizing: border-box;
-        }
-        .row {
-          display: flex;
-          gap: 20px;
-          flex-wrap: wrap;
-          width: 100%;
-        }
       }
 
+      /* Form styles */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="file"],
+      input[type="date"],
+      input[type="number"],
+      textarea {
+        display: flex;
+        margin-top: 5px;
+        width: 100%;
+        height: 25px;
+        background-color: var(--secondary-bg-color);
+        color: var(--text-color);
+        border: 1px solid var(--highlights);
+        appearance: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
       .row > .form-group {
         flex: 1;
         min-width: 100px;
+      }
+      @media (max-width: 800px) {
+        .row {
+          display: flex;
+          flex-direction: column;
+        }
+        .button-group {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .button-group .btn {
+          width: 100%;
+          display: block;
+        }
       }
       .full-width {
         width: 100%;
@@ -166,6 +176,20 @@
 
       input:focus::placeholder {
         color: transparent;
+      }
+      .form-group .btn {
+        display: inline-block;
+      }
+      .form-group:has(input[required]) label::after {
+        content: " *";
+        color: red;
+      }
+
+      .btn[type="submit"]:hover {
+        background-color: var(--accent-color2) !important;
+      }
+      .btn[type="reset"]:hover {
+        background-color: var(--accent-color1) !important;
       }
     </style>
     <title>Job Application | Hot Beans Web</title>
@@ -324,8 +348,16 @@
           <form style="border: 1px solid aqua">
             <div class="form-group">
               <label for="position-input">Position</label><br />
-              <input type="text" id="position-input" name="position" disabled />
+              <input
+                type="text"
+                id="position-input"
+                name="position"
+                disabled
+                required
+              />
             </div>
+          </form>
+          <form>
             <div class="row">
               <div class="form-group">
                 <label for="fname">First Name</label><br />
