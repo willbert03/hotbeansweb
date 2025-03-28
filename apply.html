@@ -182,7 +182,7 @@
       }
       .form-group:has(input[required]) label::after {
         content: " *";
-        color: red;
+        color: var(--accent-color1);
       }
 
       .btn[type="submit"]:hover {
@@ -345,7 +345,7 @@
           <h1>Job Application</h1>
         </div>
         <div class="box box-1">
-          <form style="border: 1px solid aqua">
+          <form style="margin-bottom: 10px">
             <div class="form-group">
               <label for="position-input">Position</label><br />
               <input
@@ -357,7 +357,7 @@
               />
             </div>
           </form>
-          <form>
+          <form onsubmit="return verify()">
             <div class="row">
               <div class="form-group">
                 <label for="fname">First Name</label><br />
@@ -506,6 +506,44 @@
           positionInput.value = positionTitle;
         }
       }
+    </script>
+    <script>
+      // Form Validation
+
+      // Compare email
+      function verify() {
+        let email = document.getElementById("email").value;
+        let confEmail = document.getElementById("conf-email").value;
+        let submitButton = document.getElementById("submit");
+
+        if (email === confEmail) {
+          alert("Emails match!");
+          return true; // Allow form submission
+        } else {
+          alert("Emails do not match!");
+          return false; // Prevent form submission
+        }
+      }
+
+      // Validates DOB between 16 and 100 years ago
+      let today = new Date();
+      let maxDate = new Date(
+        today.getFullYear() - 16,
+        today.getMonth(),
+        today.getDate()
+      )
+        .toISOString()
+        .split("T")[0];
+      let minDate = new Date(
+        today.getFullYear() - 100,
+        today.getMonth(),
+        today.getDate()
+      )
+        .toISOString()
+        .split("T")[0];
+
+      document.getElementById("dob").max = maxDate;
+      document.getElementById("dob").min = minDate;
     </script>
   </body>
 </html>
