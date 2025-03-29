@@ -27,7 +27,10 @@ You have recently joined a web development company, Hot Beans Web as a junior we
 - Slide Hover Button Effect: [codepen.io](https://codepen.io/RazorXio/pen/gMaoOW)
 - Slideshow Carousel: [cssscript.com](https://www.cssscript.com/infinite-carousel-autoplay/)
 - Mobile Navbar Images: [codepen.io](https://codepen.io/giannisKapa/pen/wBaPwe)
-- Forms Placeholder Text [stackoverflow.com](https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery)
+- Forms Placeholder Text: [stackoverflow.com](https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery)
+- Responsive Form: [youtube.com](https://www.youtube.com/watch?v=moIHTT2XK9g)
+- Custom File Selector Button: [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button)
+- Custom Invalid Form Error: [mozilla.org](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation#validating_forms_using_javascript)
 
 ## Tools Used
 

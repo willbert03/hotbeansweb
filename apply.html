@@ -144,10 +144,20 @@
         appearance: none;
         border-radius: 5px;
         box-sizing: border-box;
+        padding-left: 5px;
+      }
+      input::file-selector-button {
+        background-color: var(--secondary-bg-color);
+        color: var(--text-color);
+        border: 0px;
+        appearance: none;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
       }
       .row {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: wrap;
         width: 100%;
       }
@@ -366,7 +376,8 @@
                 <input
                   type="text"
                   id="fname"
-                  placeholder="Enter your first name"
+                  title="Please enter your first name."
+                  placeholder="e.g. John"
                   required
                   minlength="2"
                   maxlength="50"
@@ -378,7 +389,8 @@
                 <input
                   type="text"
                   id="lname"
-                  placeholder="Enter your last name"
+                  title="Please enter your last name."
+                  placeholder="e.g. Doe"
                   required
                   minlength="2"
                   maxlength="50"
@@ -390,7 +402,8 @@
               <input
                 type="email"
                 id="email"
-                placeholder="example@domain.com"
+                title="Please enter a valid email address."
+                placeholder="e.g. example@domain.com"
                 required
                 minlength="3"
                 maxlength="264"
@@ -401,7 +414,8 @@
               <input
                 type="email"
                 id="conf-email"
-                placeholder="example@domain.com"
+                title="Please confirm your email address."
+                placeholder="e.g. example@domain.com"
                 required
                 minlength="3"
                 maxlength="264"
@@ -413,8 +427,9 @@
                 <input
                   type="number"
                   id="phone"
-                  placeholder="07*** ******"
-                  pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
+                  title="Please enter your mobile phone number."
+                  placeholder="e.g. +44 1234 567890"
+                  pattern="(\+44\s?\d{4}\s?\d{6}|\+44\d{10}|0\d{4}\s?\d{6})"
                   required
                   minlength="11"
                   maxlength="11"
@@ -422,7 +437,13 @@
               </div>
               <div class="form-group">
                 <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" placeholder="YYYY-MM-DD" required />
+                <input
+                  type="date"
+                  id="dob"
+                  title="Please enter your DOB. You must be 18 to register for this position."
+                  placeholder="YYYY-MM-DD"
+                  required
+                />
               </div>
             </div>
 
@@ -431,7 +452,8 @@
               <input
                 type="text"
                 id="address"
-                placeholder="Building and street"
+                title="Please enter your home address."
+                placeholder="e.g. 64 Zoo Lane"
                 required
               />
             </div>
@@ -441,7 +463,8 @@
                 <input
                   type="text"
                   id="city"
-                  placeholder="Town or city"
+                  title="Please enter your city."
+                  placeholder="e.g. Ipswich"
                   required
                 />
               </div>
@@ -450,7 +473,8 @@
                 <input
                   type="text"
                   id="postcode"
-                  placeholder="e.g. SW1A 1AA"
+                  title="Please enter your postcode."
+                  placeholder="e.g. IP4 5HD"
                   required
                 />
               </div>
@@ -458,14 +482,26 @@
             <div class="row">
               <div class="form-group">
                 <label for="cv">Upload CV:</label>
-                <input type="file" id="cv" accept=".pdf,.docx" required /><br />
+                <input
+                  type="file"
+                  id="cv"
+                  title="Please upload your CV in a respectable format."
+                  accept=".pdf,.doc,.docx,.txt,.odt"
+                  required
+                />
               </div>
               <div class="form-group">
                 <label for="cl">Upload Cover Letter:</label>
-                <input type="file" id="cl" accept=".pdf,.docx" /><br />
+                <input
+                  type="file"
+                  id="cl"
+                  title="Please upload your optional cover letter in a respectable format."
+                  accept=".pdf,.doc,.docx,.txt,.odt"
+                />
               </div>
             </div>
-            <div class="form-group" style="gap: 10px">
+            <div class="form-group">
+              <br />
               <button type="submit" class="btn">Submit</button>
               <button type="reset" class="btn">Clear</button>
             </div>
@@ -514,23 +550,19 @@
 
       // Compare email
       function verify() {
-        let email = document.getElementById("email").value;
-        let confEmail = document.getElementById("conf-email").value;
-        let submitButton = document.getElementById("submit");
-
-        if (email === confEmail) {
-          alert("Emails match!");
-          return true; // Allow form submission
+        let email = document.getElementById("email");
+        let confEmail = document.getElementById("conf-email");
+        if (email.value === confEmail.value) {
+          confEmail.setCustomValidity("");
         } else {
-          alert("Emails do not match!");
-          return false; // Prevent form submission
+          confEmail.setCustomValidity("Email addresses do not match!");
         }
       }
+      document.getElementById("conf-email").addEventListener("input", verify);
 
-      // Validates DOB between 16 and 100 years ago
       let today = new Date();
       let maxDate = new Date(
-        today.getFullYear() - 16,
+        today.getFullYear() - 18,
         today.getMonth(),
         today.getDate()
       )
@@ -544,8 +576,24 @@
         .toISOString()
         .split("T")[0];
 
-      document.getElementById("dob").max = maxDate;
-      document.getElementById("dob").min = minDate;
+      let dobInput = document.getElementById("dob");
+      dobInput.max = maxDate;
+      dobInput.min = minDate;
+
+      dobInput.addEventListener("input", function () {
+        let enteredDate = new Date(dobInput.value);
+        let minAllowedDate = new Date(
+          today.getFullYear() - 18,
+          today.getMonth(),
+          today.getDate()
+        ); // 18 years ago
+
+        if (enteredDate > minAllowedDate) {
+          dobInput.setCustomValidity("You must be at least 18 years old.");
+        } else {
+          dobInput.setCustomValidity("");
+        }
+      });
     </script>
   </body>
 </html>
