@@ -38,3 +38,4 @@ You have recently joined a web development company, Hot Beans Web as a junior we
 - ChatGPT: Code fixing
 - w3schools: [weschools.com](http://w3schools.com)
 - CSS Bento Box Generator: [makeitgrid.com](https://www.makeitgrid.com)
+- Google Maps Embed Maker: [embed-map.com](https://www.embed-map.com/)

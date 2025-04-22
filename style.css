@@ -242,8 +242,6 @@ span.text {
 .content {
   margin: 20px;
   border-radius: 25px;
-  border-style: solid;
-  border-color: #33ff00; /* Dev outline */
   opacity: 0; /* Initially hidden */
   animation: fadeIn 1.5s ease-in-out forwards;
 }
