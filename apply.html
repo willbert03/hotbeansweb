@@ -532,7 +532,7 @@
             have any questions, please fill free to email us at
             <a
               style="text-decoration: underline"
-              href="mailto:hr@hbw.com?subject=Job Application Queery"
+              href="mailto:hr@hbw.com?subject=Job Application query"
               >hr@hbw.com</a
             >.
           </p>
@@ -570,7 +570,7 @@
     </div>
     <script src="pagetrans.js"></script>
     <script>
-      // Define position titles based on the key
+      // Define position keys and their titles
       const positionTitles = {
         HBWJFWD: "Junior Frontend Web Developer",
         HBWJBWD: "Junior Backend Web Developer",
@@ -578,7 +578,7 @@
         HBWSBD: "Senior Backend Developer",
       };
 
-      // Function to get query parameter
+      // Function to get position query parameter
       function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
@@ -587,13 +587,13 @@
       // Get the position key from URL
       const positionKey = getQueryParam("position");
 
-      // If no key is provided or it's not in the list, redirect to vacancies page
+      // If key broken, return to vacancies page
       if (!positionKey || !positionTitles[positionKey]) {
         window.location.href = "vacancies.html";
       } else {
         const positionTitle = positionTitles[positionKey];
 
-        // Autofill the form field (assuming the field has an ID of "position-input")
+        // Place positionTitle in position-input form field
         const positionInput = document.getElementById("position-input");
         if (positionInput) {
           positionInput.value = positionTitle;
