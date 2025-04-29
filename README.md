@@ -18,7 +18,7 @@ You have recently joined a web development company, Hot Beans Web as a junior we
 - Monsterrat Variable Font: [fonts.google.com](https://fonts.google.com/specimen/Montserrat)
 - Icon Pack: [phosphoricons.com](https://phosphoricons.com/?q=%22%22&weight=%22regular%22)
 - Social Media Icons: [simpleicons.org](https://simpleicons.org)
--
+- Stock Images: [pexels.com](https://www.pexels.com)
 
 ## Inspiration
 
